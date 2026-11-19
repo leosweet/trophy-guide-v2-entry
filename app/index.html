@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Legend — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header id="top">
+  <div class="brand">
+    <p class="kicker">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</p>
+    <h1>Leonida Legend</h1>
+    <p class="tagline">Every trophy, every guide, every source — and a tracker that remembers where you are.</p>
+  </div>
+  <div class="platinum" id="platinumBox">
+    <p class="platinum-label">Road to the platinum</p>
+    <p class="platinum-name">Vice Got a Price!</p>
+    <div class="bar"><div class="bar-fill" id="overallFill"></div></div>
+    <p class="platinum-count" id="overallCount">0 of 55 earned &middot; 0%</p>
+    <p class="platinum-est">About 200 hours &middot; difficulty 4/10 &middot; 1 playthrough &middot; no online trophies</p>
+  </div>
+</header>
+
+<nav class="tabs" id="tabs">
+  <button type="button" data-view="tracker" class="tab active" id="tabTracker">Tracker</button>
+  <button type="button" data-view="roadmap" class="tab" id="tabRoadmap">Roadmap to Platinum</button>
+  <button type="button" data-view="missable" class="tab" id="tabMissable">Missable Timeline</button>
+  <button type="button" data-view="about" class="tab" id="tabAbout">About &amp; Sources</button>
+</nav>
+
+<section class="kind-strip" id="kindStrip" aria-label="Progress by kind"></section>
+
+<section class="toolbar" id="toolbar">
+  <label class="field search-field">Search
+    <input type="search" id="search" placeholder="Trophy, mission or place…" autocomplete="off">
+  </label>
+  <label class="field">Kind
+    <select id="kindFilter">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="side">Side missions</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="combat">Combat &amp; robberies</option>
+      <option value="exploration">Exploration</option>
+      <option value="money">Money &amp; property</option>
+      <option value="meta">Platinum &amp; 100%</option>
+    </select>
+  </label>
+  <label class="field">Grade
+    <select id="gradeFilter">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label class="field">Sort
+    <select id="sortFilter">
+      <option value="roadmap">Roadmap order</option>
+      <option value="grade">Grade, then name</option>
+      <option value="name">Name A–Z</option>
+    </select>
+  </label>
+  <label class="check"><input type="checkbox" id="missableOnly"> Missable only</label>
+  <label class="check"><input type="checkbox" id="hideEarned"> Hide earned</label>
+  <label class="check spoiler-check"><input type="checkbox" id="spoiler"> Spoiler-free mode</label>
+  <div class="actions">
+    <button type="button" id="exportBtn">Export progress</button>
+    <label class="import-btn">Import progress <input type="file" id="importFile" accept="application/json"></label>
+    <button type="button" id="resetBtn">Reset</button>
+  </div>
+</section>
+
+<main id="main">
+  <section class="list-col">
+    <p class="list-meta" id="listMeta"></p>
+    <div class="missable-banner" id="missableBanner" hidden>
+      <strong>Do this first.</strong> Positive Mental Attitude is the only trophy that can be missed:
+      meditate with Lucia on the balcony of Jason&rsquo;s house in Chapter 1, the morning after Down to Earth.
+      It is gone after Chapter 1. Open the Missable Timeline tab for the full warning.
+    </div>
+    <ul class="trophy-list" id="trophyList"></ul>
+  </section>
+  <aside class="detail-col" id="detailCol">
+    <article class="detail" id="detail">
+      <p class="detail-empty">Pick a trophy on the left to read its guide, sources and sub-checklist.</p>
+    </article>
+  </aside>
+</main>
+
+<section class="view-panel" id="roadmapView" hidden>
+  <h2>Roadmap to the platinum</h2>
+  <p class="view-intro">Five stages, in the order to play them. Story first, side characters second, partner stunts third, collectibles fourth, money and 100% last. Nothing after Stage 1 can be missed except the Chapter 1 meditation.</p>
+  <div id="roadmapStages"></div>
+</section>
+
+<section class="view-panel" id="missableView" hidden>
+  <h2>Missable timeline</h2>
+  <p class="view-intro">There is no mission replay in GTA VI, so keep a manual save at the start of every chapter and one before the final mission. The game has 15 manual save slots.</p>
+  <ol class="timeline" id="timeline"></ol>
+  <h3>Things that look missable but are not</h3>
+  <ul class="safe-list">
+    <li>Optional missions that disappear after a while — there are far more than the 100 the checklist needs.</li>
+    <li>Quest givers who go away mid-story (Kenton, for example) — every trophy-related character comes back.</li>
+    <li>Some fences and magazine collectibles in story buildings — replacements unlock, and the checklist does not need all of them.</li>
+    <li>Strangers &amp; Freaks — all strands are still there after the story in free-roam.</li>
+  </ul>
+  <p class="warn">Avoid the Irredeemable criminal profile: it is permanent, and police shoot on sight far more often. It does not block any trophy, but it makes everything harder.</p>
+</section>
+
+<section class="view-panel" id="aboutView" hidden>
+  <h2>About &amp; sources</h2>
+  <p>Grand Theft Auto VI released on 19 November 2026. This guide was written after launch from the guides below, in this guide&rsquo;s own words — sources are cited beside each trophy, never copied. Two trophies are still unconfirmed on launch day two (Bad Luck, I Guess and Ten Pin) and one is only partly confirmed (In The Beginning…); they say so honestly instead of guessing.</p>
+  <p>Official trophy names, descriptions and grades are shown exactly as PlayStation publishes them. The app works fully offline: it loads nothing from the network, and your progress lives in your browser (localStorage) until you export it.</p>
+  <h3>Main sources</h3>
+  <ul class="source-list" id="sourceList"></ul>
+  <h3>How the tracker saves</h3>
+  <p>Earned ticks, sub-checklist counts and your spoiler setting are saved in localStorage automatically. Export writes a JSON file you can import back on any machine. Reset clears everything.</p>
+</section>
+
+<footer>
+  <p>Leonida Legend — an unofficial fan guide. Not affiliated with Rockstar Games. No Rockstar artwork, logos or game screenshots are used. Trophy names and descriptions are shown as PlayStation publishes them.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
